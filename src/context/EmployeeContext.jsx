@@ -11,7 +11,7 @@ export const EmployeeProvider = ({ children }) => {
     const storedData = localStorage.getItem("employees");
     const data = storedData ? JSON.parse(storedData) : initialData;
     setEmployees(data);
-    setFilteredEmployees(data); // Initialize filtered list with all employees
+    setFilteredEmployees(data);
   }, []);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export const EmployeeProvider = ({ children }) => {
   const addEmployee = (newEmployee) => {
     const updatedEmployees = [...employees, newEmployee];
     setEmployees(updatedEmployees);
-    setFilteredEmployees(updatedEmployees); // Update filtered list as well
+    setFilteredEmployees(updatedEmployees);
   };
 
   const contextValue = {
